@@ -1,110 +1,207 @@
-📊 Exploratory Data Analysis (EDA) Project
-<br>
-🧠 Overview
+Project Overview — Nike Sales Data EDA
 
-This project focuses on performing Exploratory Data Analysis (EDA) to understand the structure, relationships, and hidden insights within the dataset.
-The main goal is to clean, visualize, and interpret data using Python libraries such as Pandas, NumPy, Matplotlib, and Seaborn.
+This project performs Exploratory Data Analysis (EDA) on the Nike Sales Dataset, which contains detailed information about Nike’s product sales across different regions, sales channels, and categories.
 
-EDA helps uncover:
+The goal of this project is to:
 
-Patterns and relationships between features
+Understand how Nike’s sales, pricing, and profit behave across different product lines.
 
-Missing values and data inconsistencies
+Detect patterns, anomalies, and insights that can help optimize sales strategy.
 
-Outliers or unusual observations
+Clean the dataset, handle missing values, and visualize the key trends.
 
-Key insights for better decision-making or model preparation
+🧾 Dataset Summary
 
-📂 Project Structure
-📁 EDA Project
-│
-├── archive (dataset).csv
-├── EDA_Project.ipynb
-├── README.md
-└── requirements.txt
+File Name: Nike_Sales_Uncleaned.csv
+Total Rows: 2500
+Columns: 13
+
+Column	Description
+Order_ID	Unique ID for each order
+Gender_Category	Target gender (Men, Women, Kids)
+Product_Line	Type/category of product (Running, Soccer, Training, etc.)
+Product_Name	Product model name
+Size	Product size (S, M, L, XL)
+Units_Sold	Quantity sold
+MRP	Maximum Retail Price
+Discount_Applied	Discount percentage
+Revenue	Total revenue generated
+Order_Date	Date of the order
+Sales_Channel	Mode of sale (Online / Retail)
+Region	City/region where sale occurred
+Profit	Profit earned on that sale
+⚙️ Steps Performed in EDA
+
+Data Loading & Inspection
+
+Imported dataset using Pandas.
+
+Checked structure, column types, and null values.
+
+Observed missing data in MRP, Units_Sold, and Discount_Applied.
+
+Data Cleaning
+
+Handled null values using dropna() or fillna() as needed.
+
+Removed duplicate records.
+
+Converted Order_Date to datetime format.
+
+Removed invalid or negative revenue values.
+
+Feature Understanding
+
+Analyzed numeric distributions (MRP, Profit, Revenue).
+
+Studied categorical data like Gender_Category, Product_Line, and Region.
+
+Visualization & Analysis
+
+Histograms for price, revenue, and profit distribution.
+
+Countplots for gender and sales channels.
+
+Scatterplots to explore relationships (e.g., MRP vs Profit).
+
+Trend analysis of revenue over time.
+
+Advanced Exploration
+
+Created new columns such as Profit_Status using list comprehension.
+
+Used iloc, loops, and filtering to extract insights.
+
+Detected records with inconsistent or missing sales info.
+
+📈 Key Insights
+
+Majority of sales came from the Online channel, but Retail sales generated higher profits on average.
+
+Running and Soccer product lines dominate overall sales volume.
+
+Most products fall in the mid-range MRP (₹3000–₹7000).
+
+Some records have revenue = 0 or missing MRP, indicating incomplete transactions or data entry issues.
+
+Profit distribution is positively skewed — a few products contribute heavily to overall profit.
+
+The KDE curves in visualizations helped identify the most common price and profit ranges.
 
 🧰 Technologies Used
 
 Python
 
-Pandas → Data manipulation and cleaning
+Pandas – for data manipulation
 
-NumPy → Numerical operations
+NumPy – for numerical operations
 
-Matplotlib / Seaborn → Data visualization
+Matplotlib / Seaborn – for data visualization
 
-Jupyter Notebook → Interactive analysis environment
+Jupyter Notebook – for analysis and reporting
 
-🔍 Key Steps in Analysis
+🪶 Example Visualizations
 
-Data Loading and Inspection
+Distribution of Product Prices (MRP)
 
-Imported the dataset and explored its structure using head(), info(), and describe().
+Profit Distribution (only positive profits)
 
-Data Cleaning
+Revenue Trend Over Time
 
-Handled missing or null values using dropna() and fillna().
+Count of Orders by Gender Category
 
-Removed duplicates and corrected inconsistent data formats.
+Scatterplot of MRP vs Profit
 
-Data Transformation
+💡 Learning Outcomes
 
-Converted data types, created new columns, and encoded categorical variables if required.
+Gained understanding of retail data cleaning and feature handling.
 
-Exploratory Visualization
+Learned to perform EDA using Pandas, Seaborn, and Matplotlib.
 
-Visualized distributions using histograms and boxplots.
+Practiced writing analytical queries without groupby() using loops, list comprehensions, and iloc.
 
-Explored relationships with pair plots, heatmaps, and correlation analysis.
+Strengthened skills in interpreting real-world data and generating business insights.
 
-Insights and Observations
+📝 README.md (For GitHub)
 
-Identified trends, correlations, and outliers.
+You can copy this below section directly into your GitHub README file 👇
 
-Highlighted key takeaways and business implications.
+# 👟 Nike Sales Data - Exploratory Data Analysis (EDA)
 
-📈 Types of Analysis Performed
+### 📘 Overview
+This project focuses on performing **Exploratory Data Analysis (EDA)** on Nike’s sales data.  
+The dataset contains details about product lines, gender categories, regions, profits, and revenues.  
+The goal is to clean, explore, and visualize the data to uncover sales trends and actionable insights.
 
-Univariate Analysis → Understanding single-column distributions
+---
 
-Bivariate Analysis → Relationship between two variables
+### 📂 Dataset Information
+**File:** `Nike_Sales_Uncleaned.csv`  
+**Rows:** 2500  
+**Columns:** 13  
 
-Multivariate Analysis → Interaction among multiple features
+| Column | Description |
+|--------|-------------|
+| Order_ID | Unique ID for each order |
+| Gender_Category | Target gender (Men, Women, Kids) |
+| Product_Line | Product type (Running, Soccer, Training, etc.) |
+| Product_Name | Nike product model |
+| Size | Size of the product |
+| Units_Sold | Quantity sold |
+| MRP | Product price |
+| Discount_Applied | Discount rate applied |
+| Revenue | Total revenue generated |
+| Order_Date | Date of the order |
+| Sales_Channel | Online or Retail |
+| Region | Location of sale |
+| Profit | Profit from sale |
 
-Correlation Analysis → Checking how features are interrelated
+---
 
-Outlier Detection → Identifying anomalies in data
+### ⚙️ Steps in the Project
+1. **Data Loading & Cleaning** – Checked nulls, removed duplicates, corrected formats  
+2. **Exploratory Data Analysis** – Visualized prices, revenue, profits, and regions  
+3. **Feature Analysis** – Investigated patterns in gender, category, and sales channels  
+4. **Advanced Analysis** – Used `iloc`, loops, and list comprehensions for deeper insights  
+5. **Visualization** – Created histograms, scatterplots, and KDE-based distribution plots  
 
-💡 Key Insights
+---
 
-(You can customize this section once you see your actual results)
+### 📊 Key Insights
+- Running & Soccer categories generate the highest sales.  
+- Online orders are more frequent, but retail stores yield better profits.  
+- Most Nike products are priced between ₹3000–₹7000.  
+- Some records show missing values in price or units sold, requiring cleaning.  
+- Profit distribution is positively skewed, showing few high-profit sales.  
 
-Certain columns show strong positive correlation.
+---
 
-Few missing values were found and imputed using mean/median.
+### 🧰 Tech Stack
+- Python  
+- Pandas  
+- NumPy  
+- Matplotlib  
+- Seaborn  
+- Jupyter Notebook  
 
-Outliers identified and handled to make data more stable.
+---
 
-Distribution of categorical data is uneven — useful for feature engineering later.
+### 💡 Learnings
+- Data cleaning and wrangling with Pandas  
+- Visualization and interpretation with Seaborn & Matplotlib  
+- Using loops, list comprehensions, and `iloc` for custom EDA  
+- Turning raw data into meaningful business insights  
 
-🧾 Learning Outcomes
+---
 
-Improved understanding of dataset structure and statistics
+### 📸 Example Visuals
+- Distribution of Product Prices  
+- Profit Distribution (Positive Only)  
+- Revenue Trend Over Time  
+- Count of Orders by Gender Category  
+- MRP vs Profit Relationship  
 
-Strengthened data visualization and interpretation skills
+---
 
-Prepared dataset for machine learning or business analysis
-
-Practiced storytelling through data
-
-🚀 Future Scope
-
-Feature engineering for model preparation
-
-Predictive modeling using ML algorithms
-
-Dashboard creation using Power BI or Tableau
-
-👨‍💻 Author
-
-Mustakim Jamal Mulla
+### 👨‍💻 Author
+**MUSTAKIM JAMAL MULLA**  
